@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Triple Ventures Private Limited — Trusted Corporate Supply Partner</title>
+<style>
+/* ── TOKENS ─────────────────────────────── */
+:root{
+  --dark:#0B3D4E;--mid:#0F7A8A;--light:#C3E9EE;
+  --gold:#F5A623;--rose:#E8467C;--green:#2E7D32;
+  --purple:#6A1B9A;--orange:#BF360C;--blue:#1A237E;
+  --amber:#E65100;--brown:#8D6E63;
+  --white:#fff;--off:#F4FBFC;--text:#1A2B30;--muted:#5C7E86;
+  --border:#D0EEF2;--r:14px;
+  --sh:0 4px 24px rgba(11,61,78,.10);
+  --shl:0 10px 40px rgba(11,61,78,.16);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+h1{font-size:clamp(2rem,5vw,3.6rem);font-family:Georgia,serif;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3vw,2.3rem);font-family:Georgia,serif;line-height:1.2}
+h3{font-size:1.05rem;font-weight:700;line-height:1.3}
+h4{font-size:.88rem;font-weight:700}
+.wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem}
+sec{display:block;padding:4.5rem 0}
+/* ── PRINT: make all content visible ─────── */
+@media print{
+  .reveal{opacity:1!important;transform:none!important}
+  nav{position:relative!important}
+  #home{min-height:auto!important;padding-top:2rem!important}
+}
+/* ── REVEAL ANIMATION ─────────────────── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ── NAV ───────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(11,61,78,.97);backdrop-filter:blur(10px);
+  border-bottom:2px solid var(--gold)}
+.nav-i{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1.5rem;max-width:1160px;margin:0 auto;gap:1rem}
+.nlogo .l1{font-family:Georgia,serif;font-size:1.05rem;font-weight:700;
+  color:#fff;letter-spacing:.04em}
+.nlogo .l2{font-size:.6rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.nlinks{display:flex;gap:.18rem;flex-wrap:wrap}
+.nlinks a{color:rgba(255,255,255,.78);font-size:.78rem;padding:.3rem .55rem;
+  border-radius:5px;transition:.18s;white-space:nowrap}
+.nlinks a:hover{background:rgba(245,166,35,.15);color:var(--gold)}
+.npill{background:var(--rose);color:#fff;font-size:.68rem;font-weight:700;
+  padding:.22rem .7rem;border-radius:99px;white-space:nowrap;flex-shrink:0}
+
+/* ── HERO ──────────────────────────────── */
+#home{min-height:100vh;
+  background:linear-gradient(145deg,var(--dark) 0%,#0d5566 55%,#082e3a 100%);
+  display:flex;align-items:center;padding-top:5rem;position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.b1{width:520px;height:520px;background:var(--mid);opacity:.15;top:-130px;right:-80px}
+.b2{width:280px;height:280px;background:var(--gold);opacity:.12;bottom:-60px;right:240px}
+.b3{width:180px;height:180px;background:var(--rose);opacity:.14;bottom:-30px;left:-30px}
+.hero-g{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;
+  position:relative;z-index:1}
+.heye{display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(232,70,124,.14);border:1px solid rgba(232,70,124,.35);
+  color:var(--rose);font-size:.75rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:.35rem .9rem;border-radius:99px;margin-bottom:1.3rem}
+.htitle{color:#fff;margin-bottom:.6rem}
+.htitle span{color:var(--gold)}
+.htag{color:rgba(195,233,238,.82);font-size:1.05rem;max-width:500px;
+  margin-bottom:.4rem;line-height:1.65}
+.htag2{color:var(--gold);font-size:.95rem;font-style:italic;margin-bottom:2rem}
+.hbtns{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.5rem;
+  border-radius:7px;font-weight:700;font-size:.88rem;cursor:pointer;
+  border:none;transition:.2s;text-decoration:none}
+.bg{background:var(--gold);color:var(--dark)}
+.bg:hover{background:#e09820;transform:translateY(-2px);
+  box-shadow:0 6px 22px rgba(245,166,35,.4)}
+.bo{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.32)}
+.bo:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hcats{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem}
+.hcat{background:rgba(255,255,255,.08);border:1px solid rgba(195,233,238,.18);
+  color:rgba(195,233,238,.82);font-size:.74rem;padding:.28rem .65rem;border-radius:99px}
+.hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:1.5rem}
+.hstat{text-align:center;background:rgba(255,255,255,.06);
+  border:1px solid rgba(195,233,238,.15);border-radius:10px;padding:.8rem .5rem}
+.hstat .v{font-family:Georgia,serif;font-size:1.7rem;font-weight:700;
+  color:var(--gold);line-height:1}
+.hstat .l{font-size:.65rem;color:rgba(195,233,238,.7);margin-top:.3rem;
+  text-transform:uppercase;letter-spacing:.07em}
+.hcards{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.hcard{background:rgba(255,255,255,.07);border:1px solid rgba(195,233,238,.15);
+  border-radius:12px;padding:1rem;transition:.2s}
+.hcard:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.hcard .ico{font-size:1.6rem;margin-bottom:.45rem}
+.hcard h4{color:#fff;font-size:.85rem;margin-bottom:.2rem}
+.hcard p{color:rgba(195,233,238,.65);font-size:.74rem;line-height:1.4}
+
+/* ── SECTION COMMON ────────────────────── */
+.slbl{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;padding:.3rem .9rem;border-radius:99px;margin-bottom:.9rem}
+.lteal{background:rgba(15,122,138,.1);color:var(--mid)}
+.lrose{background:rgba(232,70,124,.1);color:var(--rose)}
+.ldark{background:rgba(11,61,78,.1);color:var(--dark)}
+.llight{background:rgba(195,233,238,.12);color:var(--light)}
+
+/* ── ABOUT ─────────────────────────────── */
+#about{background:var(--off)}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.ab p{color:var(--muted);margin-bottom:1rem;font-size:.97rem}
+.ab h3{color:var(--dark);margin:.1rem 0 .4rem;font-size:1rem}
+.qblock{border-left:3px solid var(--gold);background:rgba(245,166,35,.06);
+  border-radius:0 8px 8px 0;padding:.8rem 1.1rem;margin:1.3rem 0;
+  font-style:italic;font-size:.95rem;color:var(--text);line-height:1.65}
+.wtag{display:inline-flex;align-items:center;gap:.55rem;
+  background:rgba(232,70,124,.08);border:1px solid rgba(232,70,124,.25);
+  border-radius:8px;padding:.55rem 1rem;color:var(--rose);
+  font-size:.9rem;font-weight:700;margin-top:.5rem}
+.aright{display:flex;flex-direction:column;gap:1rem}
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.sc{border-radius:12px;padding:1.3rem 1rem;text-align:center;
+  color:#fff;box-shadow:var(--sh)}
+.sc .n{font-family:Georgia,serif;font-size:2rem;font-weight:700;line-height:1}
+.sc .t{font-size:.72rem;margin-top:.4rem;opacity:.88;text-transform:uppercase;letter-spacing:.07em}
+.krow{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.kpi{background:#fff;border:1px solid var(--border);border-radius:10px;
+  padding:1rem .6rem;text-align:center;box-shadow:var(--sh)}
+.kpi .ki{font-size:1.6rem;margin-bottom:.35rem}
+.kpi .kv{font-size:.92rem;font-weight:700;color:var(--mid)}
+.kpi .kl{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+
+/* ── WOMEN ─────────────────────────────── */
+#women{background:linear-gradient(160deg,#fff0f5,#fce4ec)}
+.wquote{max-width:800px;margin:0 auto 3rem;text-align:center;
+  font-family:Georgia,serif;font-size:1.18rem;font-style:italic;
+  color:var(--rose);background:rgba(232,70,124,.06);
+  border:1px solid rgba(232,70,124,.2);border-radius:var(--r);
+  padding:1.4rem 2rem;line-height:1.7}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:2rem}
+.pillar{background:#fff;border:1px solid rgba(232,70,124,.2);
+  border-radius:var(--r);padding:1.5rem 1.1rem;text-align:center;
+  box-shadow:var(--sh);transition:.2s}
+.pillar:hover{transform:translateY(-4px);box-shadow:var(--shl)}
+.pillar .ico{font-size:2.1rem;margin-bottom:.7rem}
+.pillar h4{color:var(--rose);margin-bottom:.55rem;font-size:.9rem}
+.pillar p{color:var(--muted);font-size:.82rem;line-height:1.5}
+.nstrip{background:var(--dark);border-radius:var(--r);
+  padding:1rem 1.5rem;display:flex;align-items:center;
+  justify-content:center;gap:2rem;flex-wrap:wrap}
+.nbadge{display:flex;align-items:center;gap:.45rem;
+  font-size:.82rem;color:var(--gold);font-weight:700}
+.ndiv{width:1px;height:22px;background:rgba(195,233,238,.2)}
+
+/* ── PRODUCTS ───────────────────────────── */
+#products{background:#fff}
+.catg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.2rem}
+.catg.four{grid-template-columns:repeat(4,1fr)}
+.cc{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:.22s}
+.cc:hover{transform:translateY(-5px);box-shadow:var(--shl)}
+.ch{padding:.85rem 1rem .7rem;display:flex;align-items:center;
+  gap:.65rem;color:#fff}
+.ch .em{font-size:1.5rem;flex-shrink:0}
+.ch h3{font-size:.9rem;font-family:'Segoe UI',sans-serif;
+  font-weight:700;line-height:1.2}
+.cb{background:#fff;padding:.5rem 1rem 1rem}
+.cb ul{list-style:none}
+.cb ul li{padding:.22rem 0;font-size:.79rem;color:var(--muted);
+  border-bottom:1px solid rgba(11,61,78,.05);
+  display:flex;align-items:center;gap:.45rem}
+.cb ul li:last-child{border:none}
+.cb ul li::before{content:'›';color:var(--mid);font-weight:700;flex-shrink:0}
+.it-note{font-size:.73rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+
+/* ── SUPPLY CHAIN ───────────────────────── */
+#supply{background:linear-gradient(155deg,var(--dark) 0%,#082e3a 100%)}
+.ssub{color:rgba(195,233,238,.72);text-align:center;
+  margin-top:.5rem;margin-bottom:3rem;font-size:.97rem}
+.mstrip{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:3.5rem}
+.met{background:rgba(255,255,255,.06);border:1px solid rgba(195,233,238,.13);
+  border-radius:10px;padding:1.1rem .8rem;text-align:center}
+.met .mv{font-family:Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--gold)}
+.met .ml{font-size:.7rem;color:rgba(195,233,238,.68);margin-top:.3rem;
+  text-transform:uppercase;letter-spacing:.06em}
+.chain{display:flex;align-items:stretch;gap:0;position:relative}
+.chain::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;
+  background:rgba(195,233,238,.1);z-index:0;transform:translateY(-50%)}
+.step{flex:1;position:relative;z-index:1}
+.si{background:#122e3a;border:1px solid rgba(195,233,238,.12);
+  border-radius:var(--r);padding:1.5rem .9rem;margin:0 .3rem;
+  text-align:center;display:flex;flex-direction:column;
+  align-items:center;transition:.2s;height:100%}
+.si:hover{background:#1a3f50;transform:translateY(-3px)}
+.snum{font-size:.64rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:.6rem;padding:.2rem .7rem;
+  border-radius:99px;display:inline-block}
+.sico{font-size:2.2rem;margin-bottom:.7rem}
+.stit{font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.5rem;line-height:1.3}
+.sdesc{font-size:.8rem;color:rgba(195,233,238,.65);line-height:1.5}
+.ctag{text-align:center;margin-top:2.5rem;color:var(--gold);
+  font-size:1rem;font-weight:700;letter-spacing:.04em}
+
+/* ── WHY CHOOSE US ──────────────────────── */
+#why{background:var(--off)}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.5rem}
+.wc{border-radius:var(--r);padding:1.6rem;color:#fff;
+  box-shadow:var(--sh);transition:.2s;position:relative;overflow:hidden}
+.wc::after{content:attr(data-n);position:absolute;bottom:-.3rem;right:.5rem;
+  font-family:Georgia,serif;font-size:3.8rem;font-weight:700;opacity:.13;line-height:1}
+.wc:hover{transform:translateY(-4px);box-shadow:var(--shl)}
+.wc .wi{font-size:1.9rem;margin-bottom:.7rem}
+.wc h3{font-size:1rem;margin-bottom:.45rem;font-family:'Segoe UI',sans-serif}
+.wc p{font-size:.84rem;opacity:.9;line-height:1.55}
+.tband{background:var(--dark);border-radius:var(--r);
+  padding:1rem 1.5rem;display:flex;align-items:center;
+  justify-content:center;flex-wrap:wrap;gap:2rem}
+.ti{display:flex;align-items:center;gap:.5rem;
+  color:var(--gold);font-size:.82rem;font-weight:700}
+.td{width:1px;height:20px;background:rgba(195,233,238,.18)}
+
+/* ── CONTACT ────────────────────────────── */
+#contact{background:linear-gradient(155deg,var(--dark) 0%,#082e3a 100%)}
+.cg{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:start}
+.cinfo{display:flex;flex-direction:column;gap:.9rem}
+.cit{display:flex;align-items:flex-start;gap:.9rem;
+  background:rgba(255,255,255,.05);border:1px solid rgba(195,233,238,.13);
+  border-radius:8px;padding:1rem 1.1rem}
+.cit .cico{font-size:1.4rem;flex-shrink:0;margin-top:.1rem}
+.cit .clbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.cit .cval{font-size:.92rem;color:#fff}
+.wcon{background:var(--rose);border-radius:8px;padding:.9rem 1.1rem;
+  display:flex;align-items:center;gap:.7rem;color:#fff;
+  font-size:.82rem;font-weight:700}
+.cf{background:rgba(255,255,255,.05);border:1px solid rgba(195,233,238,.13);
+  border-radius:var(--r);padding:2rem}
+.cf h3{color:#fff;margin-bottom:1.4rem;font-family:'Segoe UI',sans-serif}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.fg label{font-size:.72rem;font-weight:600;color:rgba(195,233,238,.72);
+  text-transform:uppercase;letter-spacing:.08em}
+.fg input,.fg select,.fg textarea{
+  background:rgba(255,255,255,.07);border:1px solid rgba(195,233,238,.18);
+  color:#fff;border-radius:6px;padding:.62rem .9rem;
+  font-size:.88rem;font-family:inherit;outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(195,233,238,.3)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg select option{background:var(--dark)}
+.fg textarea{resize:vertical;min-height:85px}
+
+/* ── FOOTER ─────────────────────────────── */
+footer{background:#071f28;padding:1.8rem 0;
+  font-size:.78rem;color:rgba(195,233,238,.5)}
+.fi{display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;max-width:1160px;margin:0 auto;padding:0 1.5rem}
+.fl .l1{color:#fff;font-family:Georgia,serif;font-weight:700}
+.fl .l2{font-size:.6rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
+.flinks{display:flex;gap:1.2rem;flex-wrap:wrap}
+.flinks a:hover{color:var(--gold)}
+.fcopy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  max-width:1160px;margin:.9rem auto 0;padding:.9rem 1.5rem 0;
+  border-top:1px solid rgba(195,233,238,.08);font-size:.73rem}
+.fcopy span:last-child{color:var(--rose)}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:960px){
+  .hero-g{grid-template-columns:1fr}.hcards{display:none}
+  .hstats{grid-template-columns:repeat(2,1fr)}
+  .about-g{grid-template-columns:1fr}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .catg,.catg.four{grid-template-columns:repeat(2,1fr)}
+  .chain{flex-direction:column;gap:1rem}.chain::before{display:none}
+  .mstrip{grid-template-columns:repeat(3,1fr)}
+  .wgrid{grid-template-columns:repeat(2,1fr)}
+  .cg{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .catg,.catg.four,.wgrid,.pillars,.srow{grid-template-columns:1fr}
+  .mstrip{grid-template-columns:repeat(2,1fr)}
+  .nlinks{display:none}.frow{grid-template-columns:1fr}
+  .hstats{grid-template-columns:repeat(2,1fr)}
+  .nstrip,.tband{flex-direction:column;gap:1rem;text-align:center}
+  .ndiv,.td{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-i">
+    <div class="nlogo"><div class="l1">TRIPLE VENTURES</div><div class="l2">Private Limited</div></div>
+    <div class="nlinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#women">Women Empowerment</a>
+      <a href="#products">Products</a><a href="#supply">Supply Chain</a>
+      <a href="#why">Why Us</a><a href="#contact">Contact</a>
+    </div>
+    
+  </div>
+</nav>
+
+<!-- ════ HERO — Slide 1 ════ -->
+<section id="home">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="wrap hero-g">
+    <div>
+
+      <h1 class="htitle">TRIPLE VENTURES<br/><span>PRIVATE LIMITED</span></h1>
+      <p class="htag">Your Trusted Procurement Partner for Corporate Supplies &amp; Facility Products</p>
+      <p class="htag2">Empowered Women. Empowered Workplaces.</p>
+      <div class="hbtns">
+        <a href="#products" class="btn bg">Explore Products</a>
+        <a href="#contact" class="btn bo">Get a Quote →</a>
+      </div>
+      <div class="hcats">
+        <span class="hcat">🧴 Housekeeping</span><span class="hcat">✏️ Stationery</span>
+        <span class="hcat">🖨️ Printing</span><span class="hcat">💻 IT Equipment</span>
+        <span class="hcat">⚡ Electrical &amp; Plumbing</span><span class="hcat">🖼️ Signage</span>
+        <span class="hcat">☕ Pantry</span><span class="hcat">🎁 Gifting</span>
+        <span class="hcat">🌿 Horticulture</span>
+      </div>
+      <div class="hstats">
+        <div class="hstat"><div class="v">10+</div><div class="l">Years in Supply</div></div>
+        <div class="hstat"><div class="v">50+</div><div class="l">Corporate Clients</div></div>
+        <div class="hstat"><div class="v">100%</div><div class="l">Women Leadership</div></div>
+      </div>
+    </div>
+    <div class="hcards">
+      <div class="hcard"><div class="ico">🧴</div><h4>Housekeeping Supplies</h4><p>Tissue, wipes, fragrance, dispensers &amp; more</p></div>
+      <div class="hcard"><div class="ico">✏️</div><h4>Office Stationery</h4><p>Pens, files, diaries, binders &amp; essentials</p></div>
+      <div class="hcard"><div class="ico">🖨️</div><h4>Printing Stationery</h4><p>Letterheads, brochures, visiting cards</p></div>
+      <div class="hcard"><div class="ico">💻</div><h4>IT &amp; Networking</h4><p>Laptops, consumables, active &amp; passive</p></div>
+      <div class="hcard"><div class="ico">⚡</div><h4>Electrical &amp; Plumbing</h4><p>Polycab, Jaquar, Anchor &amp; top brands</p></div>
+      <div class="hcard"><div class="ico">🎁</div><h4>Corporate Gifting</h4><p>Trophies, diaries, branded merchandise</p></div>
+      <div class="hcard"><div class="ico">🖼️</div><h4>Signage &amp; Flex</h4><p>Banners, acrylic boards, wall murals</p></div>
+      <div class="hcard"><div class="ico">🌿</div><h4>Plants &amp; Horticulture</h4><p>Indoor plants, gardens &amp; AMC contracts</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT — Slide 2 ════ -->
+<section id="about" style="padding:4.5rem 0;background:var(--off)">
+  <div class="wrap">
+    <div class="about-g">
+      <div class="ab rv">
+        <span class="slbl lteal">About Us</span>
+        <h2 style="color:var(--dark);margin-bottom:1.1rem">Trusted. Reliable.<br/>Women-Led Supply Partner.</h2>
+        <h3>Triple Ventures Private Limited</h3>
+        <p style="margin-top:.5rem">Triple Ventures is a Noida-based product supply company specialising in end-to-end procurement and delivery of corporate supplies — from housekeeping materials and office stationery to IT equipment, pantry supplies, and signage.</p>
+        <p>We are proud product suppliers — not a service company. Every item we supply is sourced from verified manufacturers and delivered with speed, consistency and care.</p>
+        <div class="qblock">"Quality is at the heart of everything we do. Every product is carefully vetted and delivered with the speed, consistency, and care your business deserves."</div>
+        <h3 style="color:var(--mid)">Our Vision</h3>
+        <p>To be India's most trusted multi-category product supply partner — powered entirely by women.</p>
+<div class="wtag"><span style="font-size:1.2rem">♀</span> Led by Women. Built for Business.</div>
+      </div>
+      <div class="aright rv d2">
+        <div class="srow">
+          <div class="sc" style="background:var(--dark)"><div class="n">10+</div><div class="t">Years in Supply</div></div>
+          <div class="sc" style="background:var(--rose)"><div class="n">100%</div><div class="t">Women Leadership</div></div>
+        </div>
+        <div class="krow">
+          <div class="kpi"><div class="ki">⏱️</div><div class="kv">48 Hr</div><div class="kl">Delivery</div></div>
+          <div class="kpi"><div class="ki">🗺️</div><div class="kv">Pan India</div><div class="kl">Reach</div></div>
+          <div class="kpi"><div class="ki">✅</div><div class="kv">Quality</div><div class="kl">Assured</div></div>
+        </div>
+        <div style="background:#fff;border-radius:var(--r);padding:1.4rem;border:1px solid var(--border)">
+          <span class="slbl ldark" style="margin-bottom:.9rem;display:inline-block">Procurement Profile 2025 · Noida, India</span>
+          <p style="font-size:.88rem;color:var(--muted);line-height:1.6">From Housekeeping and Stationery to IT Consumables, Pantry, Gifting, Electrical &amp; Plumbing, Signage, and Horticulture — everything your workplace needs, from one reliable partner.</p>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:.8rem">
+            <strong style="color:var(--dark)">📍 Address:</strong> F 72, Sector 11, Noida, Gautambuddha Nagar, UP — 201301<br/>
+            <strong style="color:var(--dark)">📞 Phone:</strong> +91 88825 59584<br/>
+            <strong style="color:var(--dark)">📧 Email:</strong> sales@tripleventures.biz<br/>
+            <strong style="color:var(--dark)">🌐 Web:</strong> www.tripleventures.biz
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WOMEN EMPOWERMENT — Slide 3 ════ -->
+<section id="women">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2rem" class="rv">
+      <span class="slbl lrose">Women Empowerment</span>
+      <h2 style="color:var(--rose)">Building Women. Building Communities.<br/>Building a Better India.</h2>
+    </div>
+    <div class="wquote rv">"Empowering a woman is not charity — it is the highest return investment a society can make."</div>
+    <div class="pillars">
+      <div class="pillar rv d1"><div class="ico">👩‍💼</div><h4>100% Women Leadership</h4><p>Every management, supervisory and decision-making role at Triple Ventures is held by a woman.</p></div>
+      <div class="pillar rv d2"><div class="ico">🎓</div><h4>Skill Training Programs</h4><p>Free vocational training for women from underprivileged communities through our NGO wing.</p></div>
+      <div class="pillar rv d4"><div class="ico">🏥</div><h4>Safe &amp; Inclusive Workplace</h4><p>Zero-tolerance harassment policy. Dedicated women's grievance cell &amp; health support.</p></div>
+    </div>
+    <div class="nstrip rv">
+      <div class="nbadge">♀ 100% Women Leadership</div><div class="ndiv"></div>
+      <div class="nbadge">✅ Equal Opportunity Employer</div><div class="ndiv"></div>
+      <div class="nbadge">🏆 10+ Years of Excellence</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PRODUCTS — Slides 4, 5, 6 ════ -->
+<section id="products" style="background:#fff;padding:4.5rem 0">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2.5rem" class="rv">
+      <span class="slbl lteal">Our Product Range</span>
+      <h2 style="color:var(--dark)">9 Categories. One Trusted Supplier.</h2>
+      <p style="color:var(--muted);margin-top:.6rem;max-width:520px;margin-left:auto;margin-right:auto">Everything your workplace needs — sourced, quality-checked and delivered on time, every time.</p>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="catg">
+      <div class="cc rv d1">
+        <div class="ch" style="background:var(--mid)"><span class="em">🧴</span><h3>Housekeeping Supplies</h3></div>
+        <div class="cb"><ul><li>Tissue Paper &amp; Toilet Rolls</li><li>Wet Wipes &amp; Sanitiser Wipes</li><li>Room Fragrance &amp; Diffusers</li><li>Dispensers &amp; Soap Holders</li><li>Dustbins &amp; Pedal Bins</li><li>Microfiber Cloths &amp; Dusters</li><li>Urinal Screens &amp; Blocks</li><li>Hand Towels &amp; Napkins</li></ul></div>
+      </div>
+      <div class="cc rv d2">
+        <div class="ch" style="background:var(--dark)"><span class="em">✏️</span><h3>Office Stationery</h3></div>
+        <div class="cb"><ul><li>Pen, Pencil, Cutter &amp; Markers</li><li>Paper, Pads &amp; Registers</li><li>Files, Folders &amp; Binders</li><li>Diary &amp; Organizers</li><li>Planners &amp; Desktop Items</li><li>Stapler, Punch &amp; Scissors</li><li>Albums, Pouches &amp; Covers</li><li>Adhesive, Labels &amp; Tape</li></ul></div>
+      </div>
+      <div class="cc rv d3">
+        <div class="ch" style="background:var(--purple)"><span class="em">🖨️</span><h3>Printing Stationery</h3></div>
+        <div class="cb"><ul><li>Letterheads &amp; Notepads</li><li>Business &amp; Visiting Cards</li><li>Brochures &amp; Flyers</li><li>Diaries &amp; Planners</li><li>Spiral &amp; Bound Notebooks</li><li>Invoice &amp; Delivery Books</li><li>Labels &amp; Stickers</li><li>Calendars (Wall / Desk)</li></ul></div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="catg">
+      <div class="cc rv d1">
+        <div class="ch" style="background:var(--blue)"><span class="em">💻</span><h3>Computer Consumables</h3></div>
+        <div class="cb"><ul><li>Printers &amp; Scanners</li><li>Cartridges &amp; Toners</li><li>Storage Media (HDD/SSD/USB)</li><li>Keyboards, Mouse &amp; Webcam</li><li>UPS &amp; Surge Protectors</li><li>Laptops &amp; Desktops</li><li>Tablets &amp; Smart Devices</li><li>Computer Accessories</li></ul></div>
+      </div>
+      <div class="cc rv d2">
+        <div class="ch" style="background:var(--amber)"><span class="em">☕</span><h3>Pantry Items</h3></div>
+        <div class="cb"><ul><li>Tea, Coffee &amp; Sugar Sachets</li><li>Disposable Cups &amp; Plates</li><li>Biscuits &amp; Snack Assortments</li><li>Mineral Water &amp; Dispensers</li><li>Dish Soap &amp; Cleaning Liquid</li><li>Trash Bags &amp; Bin Liners</li><li>Stirrers, Spoons &amp; Cutlery</li><li>Tissue Napkins &amp; Towels</li></ul></div>
+      </div>
+      <div class="cc rv d3">
+        <div class="ch" style="background:var(--brown)"><span class="em">⚡</span><h3>Electrical, Plumbing &amp; Safety</h3></div>
+        <div class="cb"><ul><li>Wires, Cables &amp; MCBs (Polycab)</li><li>Switches &amp; Sockets (Anchor/Havells)</li><li>Sanitary Ware (Jaquar/Kohler)</li><li>Plumbing Pipes &amp; Fittings</li><li>First Aid Boxes &amp; Kits</li><li>Reflective Jackets &amp; Helmets</li><li>Fire Alarm &amp; Smoke Detectors</li><li>Safety Goggles, Shoes &amp; Signs</li></ul></div>
+      </div>
+    </div>
+
+    <!-- Row 3 — 4 cols -->
+    <div class="catg four">
+      <div class="cc rv d1">
+        <div class="ch" style="background:var(--orange)"><span class="em">🖼️</span><h3>Signage &amp; Flex Printing</h3></div>
+        <div class="cb"><ul><li>Flex &amp; Vinyl Banners</li><li>Acrylic &amp; Metal Signboards</li><li>Reception &amp; Lobby Boards</li><li>Directional &amp; Safety Signs</li><li>Wall Murals &amp; Vinyl Wraps</li><li>Nameplates &amp; Door Signs</li><li>LED &amp; Backlit Signboards</li><li>Vehicle Wraps &amp; Branding</li></ul></div>
+      </div>
+      <div class="cc rv d2">
+        <div class="ch" style="background:var(--green)"><span class="em">🌿</span><h3>Plants &amp; Horticulture</h3></div>
+        <div class="cb"><ul><li>Indoor Potted Plants (All Types)</li><li>Outdoor Landscaping &amp; Gardens</li><li>Vertical Green Walls &amp; Moss Art</li><li>Seasonal Flower Arrangements</li><li>Monthly Plant AMC Contracts</li><li>Terrace &amp; Balcony Gardens</li><li>Festival Decoration Plants</li><li>Hydroponics &amp; Planters</li></ul></div>
+      </div>
+      <div class="cc rv d3">
+        <div class="ch" style="background:var(--gold)"><span class="em">🎁</span><h3 style="color:var(--dark)">Corporate Gifting</h3></div>
+        <div class="cb"><ul><li>Business Organizers &amp; Diaries</li><li>Calendars (Wall/Desk/Pocket)</li><li>Wooden Pen Stands &amp; Sets</li><li>Trophies, Mementos &amp; Awards</li><li>Promotional T-shirts &amp; Caps</li><li>Keychains &amp; Photo Frames</li><li>Candles &amp; Candle Holders</li><li>Gold &amp; Silver Coins</li></ul></div>
+      </div>
+      <div class="cc rv d4" style="border:2px solid var(--blue)">
+        <div class="ch" style="background:var(--blue)"><span class="em">🔌</span><h3>IT Equipment &amp; Networking</h3></div>
+        <div class="cb">
+          <p style="font-size:.74rem;color:var(--mid);font-weight:700;margin:.5rem 0 .3rem;text-transform:uppercase;letter-spacing:.07em">Computer Consumables</p>
+          <ul><li>Printers &amp; Scanners (Epson/HP)</li><li>Cartridges, Toners &amp; Ribbons</li><li>Storage Media — HDD, SSD, USB</li><li>Computer Accessories</li></ul>
+          <p style="font-size:.74rem;color:var(--blue);font-weight:700;margin:.55rem 0 .3rem;text-transform:uppercase;letter-spacing:.07em">Networking Equipment</p>
+          <ul><li>Laptops &amp; Desktops (HP/Dell/Lenovo)</li><li>Active: Switches, Routers, Wi-Fi APs</li><li>Passive: CAT6/Fiber, Patch Panels</li><li>CCTV, Video Conferencing &amp; UPS</li></ul>
+          <p class="it-note">🛡️ Authorised Channel Partner · AMC &amp; Support Contracts</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SUPPLY CHAIN — Slide 7 ════ -->
+<section id="supply">
+  <div class="wrap">
+    <div style="text-align:center" class="rv">
+      <span class="slbl llight">Supply Chain Strength</span>
+      <h2 style="color:#fff">Robust. Reliable. Ready.</h2>
+      <p class="ssub">Ensuring Timely Delivery Every Time — from Source to Your Doorstep.</p>
+    </div>
+    <div class="mstrip rv">
+      <div class="met"><div class="mv">✔</div><div class="ml">Verified Vendors &amp; Suppliers</div></div>
+      <div class="met"><div class="mv">24 Hr</div><div class="ml">Order Processing</div></div>
+      <div class="met"><div class="mv">99%</div><div class="ml">Order Accuracy</div></div>
+      <div class="met"><div class="mv">48 Hr</div><div class="ml">NCR Delivery</div></div>
+      <div class="met"><div class="mv">Pan India</div><div class="ml">3–5 Day Reach</div></div>
+    </div>
+    <div class="chain rv">
+      <div class="step"><div class="si">
+        <span class="snum" style="background:rgba(15,122,138,.25);color:#6fd8e8">01 · Source</span>
+        <div class="sico">🏭</div>
+        <div class="stit" style="color:#6fd8e8">Verified Vendors &amp; Suppliers</div>
+        <div class="sdesc">Empanelled verified vendors &amp; authorised suppliers across India</div>
+      </div></div>
+      <div class="step"><div class="si">
+        <span class="snum" style="background:rgba(245,166,35,.2);color:var(--gold)">02 · Stock</span>
+        <div class="sico">📦</div>
+        <div class="stit" style="color:var(--gold)">Central Warehouse</div>
+        <div class="sdesc">Noida hub with real-time inventory management &amp; tracking</div>
+      </div></div>
+      <div class="step"><div class="si">
+        <span class="snum" style="background:rgba(232,70,124,.2);color:var(--rose)">03 · Check</span>
+        <div class="sico">✅</div>
+        <div class="stit" style="color:var(--rose)">Quality Assurance</div>
+        <div class="sdesc">Every batch inspected before dispatch — zero defect promise</div>
+      </div></div>
+      <div class="step"><div class="si">
+        <span class="snum" style="background:rgba(46,125,50,.2);color:#6dbf71">04 · Dispatch</span>
+        <div class="sico">🚚</div>
+        <div class="stit" style="color:#6dbf71">24–48 Hr Delivery</div>
+        <div class="sdesc">NCR same-day possible · Pan-India 3–5 days standard</div>
+      </div></div>
+      <div class="step"><div class="si">
+        <span class="snum" style="background:rgba(106,27,154,.25);color:#c580f0">05 · Done</span>
+        <div class="sico">🔄</div>
+        <div class="stit" style="color:#c580f0">Easy Returns &amp; Reorder</div>
+        <div class="sdesc">Hassle-free returns + auto-reorder alerts for subscribed clients</div>
+      </div></div>
+    </div>
+    <div class="ctag rv">One PO &nbsp;·&nbsp; One Partner &nbsp;·&nbsp; Delivered on Time &nbsp;·&nbsp; Every Time</div>
+  </div>
+</section>
+
+<!-- ════ WHY CHOOSE US — Slide 8 ════ -->
+<section id="why" style="background:var(--off);padding:4.5rem 0">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2.5rem" class="rv">
+      <span class="slbl lteal">Why Choose Us</span>
+      <h2 style="color:var(--dark)">Why Choose Triple Ventures?</h2>
+      <p style="color:var(--muted);margin-top:.6rem">One Trusted Supplier. 9 Categories. Zero Compromise.</p>
+    </div>
+    <div class="wgrid">
+      <div class="wc rv d1" data-n="01" style="background:var(--dark)"><div class="wi">🏆</div><h3>One Trusted Supplier</h3><p>All 9 product categories from one partner — simplified procurement, one PO, one invoice.</p></div>
+      <div class="wc rv d2" data-n="02" style="background:var(--mid)"><div class="wi">✅</div><h3>Verified Quality Products</h3><p>Every brand sourced from authorised manufacturers and certified vendors only.</p></div>
+      <div class="wc rv d3" data-n="03" style="background:var(--rose)"><div class="wi">♀</div><h3>100% Women-Led Company</h3><p>A powerful women-only leadership team driving excellence with purpose and passion.</p></div>
+      <div class="wc rv d1" data-n="04" style="background:var(--gold)"><div class="wi">🚚</div><h3 style="color:var(--dark)">Timely Guaranteed Delivery</h3><p style="color:rgba(11,61,78,.85)">On-time every time — NCR same-day possible. Pan-India 3–5 days with full tracking.</p></div>
+      <div class="wc rv d2" data-n="05" style="background:var(--green)"><div class="wi">🌿</div><h3>NGO Social Impact</h3><p>Every rupee spent with us funds women's vocational training &amp; livelihood NGO programs.</p></div>
+      <div class="wc rv d3" data-n="06" style="background:var(--purple)"><div class="wi">💰</div><h3>Competitive Pricing</h3><p>Bulk procurement power — best market rates, volume discounts &amp; annual rate contracts.</p></div>
+    </div>
+    <div class="tband rv" style="margin-top:1.5rem">
+      <div class="ti">🌟 Trusted by Corporates across NCR, Delhi &amp; Pan India</div>
+      <div class="td"></div>
+      <div class="ti">♀ 100% Women-Led</div>
+      <div class="td"></div>
+      <div class="ti">🚚 Pan India Delivery</div>
+      <div class="td"></div>
+      <div class="ti">✅ Quality Assured</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT — Slide 9 ════ -->
+<section id="contact">
+  <div class="wrap">
+    <div style="text-align:center" class="rv">
+      <span class="slbl llight">Let's Build a Partnership</span>
+      <h2 style="color:#fff">Your Trusted Multi-Category Supply Partner</h2>
+      <p class="ssub">Tell us what you need — we'll respond with a quote within 24 hours.</p>
+    </div>
+    <div class="cg">
+      <div class="cinfo rv">
+        <div class="cit"><div class="cico">📍</div><div><div class="clbl">Office Address</div><div class="cval">F 72, Sector 11, Noida, Gautambuddha Nagar, UP — 201301</div></div></div>
+        <div class="cit"><div class="cico">📞</div><div><div class="clbl">Phone / WhatsApp</div><div class="cval">+91 88825 59584</div></div></div>
+        <div class="cit"><div class="cico">📧</div><div><div class="clbl">Email</div><div class="cval">sales@tripleventures.biz</div></div></div>
+        <div class="cit"><div class="cico">🌐</div><div><div class="clbl">Website</div><div class="cval">www.tripleventures.biz</div></div></div>
+        <div class="cit"><div class="cico">🕐</div><div><div class="clbl">Business Hours</div><div class="cval">Mon–Sat: 9:00 AM – 7:00 PM</div></div></div>
+        <div class="wcon"><span style="font-size:1.3rem">♀</span>100% Women-Led · Equal Opportunity Employer</div>
+      </div>
+      <div class="cf rv d2">
+        <h3>Request a Quote</h3>
+        <div class="frow">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+          <div class="fg"><label>Company</label><input type="text" placeholder="Company / Organisation"/></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com"/></div>
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+        </div>
+        <div class="fg"><label>Product Category</label>
+          <select>
+            <option value="">Select a category...</option>
+            <option>Housekeeping Supplies</option><option>Office Stationery</option>
+            <option>Printing Stationery</option><option>Computer Consumables &amp; IT Equipment</option>
+            <option>Pantry Items</option><option>Electrical, Plumbing &amp; Safety</option>
+            <option>Signage &amp; Flex Printing</option><option>Plants &amp; Horticulture</option>
+            <option>Corporate Gifting</option><option>Multiple Categories</option>
+          </select>
+        </div>
+        <div class="fg"><label>Your Requirements</label>
+          <textarea placeholder="Product name, quantity, delivery location, timeline..."></textarea>
+        </div>
+        <button class="btn bg" style="width:100%;justify-content:center;padding:.9rem;font-size:.95rem"
+          onclick="alert('Thank you! We will contact you within 24 hours.')">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="fl">
+      <div class="l1">TRIPLE VENTURES PRIVATE LIMITED</div>
+      <div class="l2">Your Trusted Procurement Partner · Noida, India</div>
+    </div>
+    <div class="flinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#women">Women Empowerment</a>
+      <a href="#products">Products</a><a href="#supply">Supply Chain</a>
+      <a href="#why">Why Us</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="fcopy">
+    <span>© 2025 Triple Ventures Private Limited. All Rights Reserved.</span>
+    <span>♀ 100% Women-Led · Equal Opportunity Employer</span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal — starts visible on page load, animates on scroll
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})
+},{threshold:.06,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Make all visible immediately on load too (for print/PDF)
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));
+});
+
+// Active nav
+const secs=[...document.querySelectorAll('section[id]')];
+const lks=[...document.querySelectorAll('.nlinks a')];
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+130;let cur=secs[0].id;
+  secs.forEach(s=>{if(y>=s.offsetTop)cur=s.id});
+  lks.forEach(a=>{const ok=a.getAttribute('href')==='#'+cur;
+    a.style.color=ok?'var(--gold)':'';
+    a.style.background=ok?'rgba(245,166,35,.12)':'';});
+},{passive:true});
+</script>
+</body>
+</html>
